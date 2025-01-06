@@ -15,6 +15,7 @@ import Footer from "./components/footer";
 import { WithUs } from "./components/work-with-us";
 import TypingAnimation from "@/components/ui/typing-animation";
 import WordPullUp from "@/components/ui/word-pull-up";
+import { useRouter } from "next/navigation";
 // import SplineScene from "./components/spline-scene";
 
 // Dynamic import of SplineScene with SSR disabled
@@ -48,6 +49,8 @@ export default function Home() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  const router = useRouter();
 
   return (
     <ReactLenis root options={{ lerp: 0.1, duration: 1.5 }}>
@@ -178,9 +181,97 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="flex items-center justify-center w-full h-[100vh]">
+        <div className="flex items-center justify-center w-full">
           <MouseFollower />
-          <Work />
+          <div className=" flex flex-col mb-64">
+            <div className="flex items-center justify-center w-full text-[16rem] text-white h-screen">
+              <h1 className="font-[family-name:var(--font-bebas-regular)] pointer-events-none">
+                [OUR CASES]
+              </h1>
+            </div>
+            <div
+              className="flex flex-col items-center gap-8 text-white cursor-pointer"
+              onClick={() => {
+                router.push("/partners");
+              }}
+            >
+              <div className="flex justify-between p-8 w-[calc(100vw-80px)] group hover:bg-muted-foreground/20 transition-colors duration-300 rounded-xl">
+                <div className="flex gap-4 items-end">
+                  <img
+                    src="/trainly.png"
+                    width={400}
+                    className="rounded-xl group-hover:rounded-[3rem] transition-all duration-500"
+                  />
+                  <div className="font-[family-name:var(--font-lark-regular)] text-7xl">
+                    TRAINLY
+                  </div>
+                </div>
+                <div className="flex flex-col justify-between w-72">
+                  <h1 className="font-[family-name:var(--font-bebas-regular)] text-2xl text-indigo-300">
+                    [CAMPAIGN]
+                  </h1>
+                  <p className="font-[family-name:var(--font-lark-regular)]">
+                    Some text here talking about what we did to help Trainly
+                    grow and the marketing techniques we used.
+                  </p>
+                </div>
+              </div>
+
+              <div
+                className="flex justify-between p-8 w-[calc(100vw-80px)] cursor-pointer group hover:bg-muted-foreground/20 transition-colors duration-300 rounded-xl"
+                onClick={() => {
+                  router.push("/partners");
+                }}
+              >
+                <div className="flex gap-4 items-end">
+                  <img
+                    src="/helen_y.jpeg"
+                    width={400}
+                    className="rounded-xl group-hover:rounded-[3rem] transition-all duration-500"
+                  />
+                  <div className="font-[family-name:var(--font-lark-regular)] text-7xl w-10">
+                    HELEN YOSEPH
+                  </div>
+                </div>
+                <div className="flex flex-col justify-between w-72">
+                  <h1 className="font-[family-name:var(--font-bebas-regular)] text-2xl text-indigo-300">
+                    [CAMPAIGN]
+                  </h1>
+                  <p className="font-[family-name:var(--font-lark-regular)]">
+                    Some text here talking about what we did to help Trainly
+                    grow and the marketing techniques we used.
+                  </p>
+                </div>
+              </div>
+
+              <div
+                className="flex justify-between p-8 w-[calc(100vw-80px)] cursor-pointer group hover:bg-muted-foreground/20 transition-colors duration-300 rounded-xl"
+                onClick={() => {
+                  router.push("/partners");
+                }}
+              >
+                <div className="flex gap-4 items-end">
+                  <img
+                    src="/np_mockup_new.jpeg"
+                    width={400}
+                    className="rounded-xl group-hover:rounded-[3rem] transition-all duration-500"
+                  />
+                  <div className="font-[family-name:var(--font-lark-regular)] text-7xl w-10">
+                    NOTEPOD
+                  </div>
+                </div>
+                <div className="flex flex-col justify-between w-72">
+                  <h1 className="font-[family-name:var(--font-bebas-regular)] text-2xl text-indigo-300">
+                    [CAMPAIGN]
+                  </h1>
+                  <p className="font-[family-name:var(--font-lark-regular)]">
+                    Some text here talking about what we did to help Trainly
+                    grow and the marketing techniques we used.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
         <WithUs />
