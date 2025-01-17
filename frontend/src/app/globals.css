@@ -1,6 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import "swiper/css";
+@import "swiper/css/navigation"; /* If using navigation */
+@import "swiper/css/pagination"; /* If using pagination */
 
 body {
   font-family: Arial, Helvetica, sans-serif;

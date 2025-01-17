@@ -58,7 +58,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${LarkeRegular.variable} ${LarkeThin.variable} ${LarkeBold.variable} ${BebasRegular.variable} antialiased`}
+        className={`${LarkeRegular.variable} ${LarkeThin.variable} ${LarkeBold.variable} ${BebasRegular.variable} antialiased overscroll-none`}
       >
         {children}
       </body>
