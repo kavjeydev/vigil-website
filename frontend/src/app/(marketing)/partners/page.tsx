@@ -26,8 +26,8 @@ const content = [
     name: "Helen Yoseph",
   },
   {
-    color1: "#FFFFFF",
-    color2: "#000000",
+    color1: "#FFE5CD",
+    color2: "#FF7B00",
     image: "np_mockup_new.jpeg",
     name: "Note Pod",
   },
@@ -56,8 +56,8 @@ export default function CarouselSwiper() {
       <PartnersNav textColor={content[activeIndex].color2} />
       <Helen color1="#080911" color2="#F0F0F0" activeIndex={activeIndex} />
       <Notepod
-        color1="#080911"
-        color2="#F0F0F0"
+        color1="#FFCF99"
+        color2="#FF7B00"
         activeIndex={activeIndex}
         visited={visitedIndices.includes(1)}
       />
