@@ -91,7 +91,7 @@ export default function CarouselSwiper() {
           {content.map((item, index) => (
             <SwiperSlide
               key={index}
-              className="flex items-center justify-center mt-52"
+              className="flex items-center justify-center"
               onClick={() => {
                 if (swiperRef.current) {
                   swiperRef.current.slideTo(index);
