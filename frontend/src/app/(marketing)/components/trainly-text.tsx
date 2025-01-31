@@ -6,28 +6,31 @@ interface NotepodProps {
   color2: string;
   activeIndex: number;
   visited: boolean;
+  prevIndex: number;
 }
-export default function Notepod({
+export default function Trainly({
   color1,
   color2,
   activeIndex,
   visited,
+  prevIndex,
 }: NotepodProps) {
   // You can split your text into letters or manually place them
-  const group1 = ["N", "O", "T", "E"];
-  const group2 = [""];
-  const group4 = ["P", "O", "D"];
+  const group1 = [""];
+  const group2 = ["T", "R", "A", "I", "N"];
+  const group4 = ["L", "Y"];
 
   useEffect(() => {
     // After first render, set isFirstLoad to false so any future slide change can animate out
     setTimeout(() => {}, 1000);
   }, []);
-
+  console.log(activeIndex, prevIndex, visited, "trainly");
   return (
     <div className="fixed w-screen h-screen z-50 pointer-events-none">
-      {(activeIndex == 2 || activeIndex == 0) && visited ? (
+      {activeIndex == 1 && prevIndex == 2 && visited ? (
         <div className="fixed w-screen h-screen z-50 pointer-events-none">
           {/* GROUP 1 */}
+
           <div
             className="
               fixed top-24 left-20
@@ -111,7 +114,7 @@ export default function Notepod({
           </div>
         </div>
       ) : (
-        activeIndex == 1 && (
+        activeIndex == 2 && (
           <div className="fixed w-screen h-screen z-50 pointer-events-none">
             {/* GROUP 1 */}
             <div
@@ -198,6 +201,7 @@ export default function Notepod({
           </div>
         )
       )}
+
     </div>
   );
 }

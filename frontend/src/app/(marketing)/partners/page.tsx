@@ -14,6 +14,7 @@ import { TextAnimate } from "@/components/ui/text-animate";
 import { PartnersNav } from "../components/partners-nav";
 import Helen from "../components/helen_text";
 import Notepod from "../components/notepod_text";
+import Trainly from "../components/trainly-text";
 
 // Install modules
 SwiperCore.use([Navigation, Pagination, Mousewheel]);
@@ -34,7 +35,7 @@ const content = [
   {
     color1: "#FFFFFF",
     color2: "#000000",
-    image: "helen_y.jpeg",
+    image: "trainly_mock.jpeg",
     name: "Trainly AI",
   },
 ];
@@ -45,21 +46,33 @@ export default function CarouselSwiper() {
   const [visitedIndices, setVisitedIndices] = useState<Array<number>>([]);
 
   useEffect(() => {
-    if (!visitedIndices.includes(activeIndex)) {
-      setVisitedIndices([...visitedIndices, activeIndex]);
-    }
+    setVisitedIndices([...visitedIndices, activeIndex]);
     console.log([...visitedIndices, activeIndex]);
   }, [activeIndex]);
+
+  console.log(activeIndex, "activeIndex");
 
   return (
     <>
       <PartnersNav textColor={content[activeIndex].color2} />
-      <Helen color1="#080911" color2="#F0F0F0" activeIndex={activeIndex} />
+      <Helen
+        color1="#080911"
+        color2="#F0F0F0"
+        activeIndex={activeIndex}
+        prevIndex={visitedIndices[visitedIndices.length - 2]}
+      />
       <Notepod
         color1="#FFCF99"
         color2="#FF7B00"
         activeIndex={activeIndex}
         visited={visitedIndices.includes(1)}
+      />
+      <Trainly
+        color1="#FFCF99"
+        color2="#277AFF"
+        activeIndex={activeIndex}
+        visited={visitedIndices.includes(2)}
+        prevIndex={visitedIndices[visitedIndices.length - 2]}
       />
       <div
         className={cn(
